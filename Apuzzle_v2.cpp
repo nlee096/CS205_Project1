@@ -228,6 +228,12 @@ bool visited(node &test){
 		for(int y = 0; y < 3; y++){
 			for(int x = 0; x < 3; x++){
 				if(test.state[y][x] != curr.state[y][x]){
+					// did not record data for report using the check below.
+					if(test.state[y][x] == 1 || test.state[y][x] == 8){
+						if (curr.state[y][x] == 1 || curr.state[y][x] == 8){
+							continue;
+						}
+					}
 					same = false;
 					break;
 				}
